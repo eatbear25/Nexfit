@@ -1,4 +1,6 @@
 import * as crypto from "crypto";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
@@ -20,7 +22,7 @@ export async function GET(req) {
   const TradeDesc = "商店線上付款";
   const ItemName = itemName;
   const ReturnURL = "https://www.ecpay.com.tw";
-  const ClientBackURL = "http://localhost:3000/shop/checkout/success";
+  const ClientBackURL = `${API_BASE_URL}/shop/checkout/success`;
   const ChoosePayment = "ALL";
 
   const stage = isStage ? "-stage" : "";
