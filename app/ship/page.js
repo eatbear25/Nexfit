@@ -1,12 +1,14 @@
 "use client";
 
 import { useShip711StoreOpener } from "./_hooks/use-ship-711-store";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
 export default function ShipPage() {
   // useShip711StoreOpener的第一個傳入參數是"伺服器7-11運送商店用Callback路由網址"
   // 指的是node(express)的對應api路由。詳情請見說明文件:
   const { store711, openWindow, closeWindow } = useShip711StoreOpener(
-    `http://localhost:3000/ship/api`, // 直接用Next提供的api路由
+    `${API_BASE_URL}/ship/api`, // 直接用Next提供的api路由
     //`${apiUrl}/shipment/711`, // 也可以用express伺服器的api路由
     { autoCloseMins: 3 } // x分鐘沒完成選擇會自動關閉，預設5分鐘。
   );
