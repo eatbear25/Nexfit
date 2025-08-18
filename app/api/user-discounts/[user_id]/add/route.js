@@ -2,16 +2,6 @@
 import { NextResponse } from "next/server";
 import db from "@/lib/forum-db";
 
-// *** 請求範例 ***
-// method: POST
-// http://localhost:3000/api/user-discounts/[user_id]/add
-
-// JSON BODY:
-// {
-//   "discount_id": 3,
-//   "expires_at": "2025-12-31"
-// }
-
 export async function POST(request, { params }) {
   try {
     const userId = parseInt(params.user_id);

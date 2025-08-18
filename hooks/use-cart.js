@@ -15,6 +15,8 @@ import {
 
 import { useAuth } from "@/app/contexts/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
 const CartContext = createContext(null);
 CartContext.displayName = "CartContext";
@@ -128,7 +130,7 @@ function CartProviderCore({ children }) {
 
       debugLog("發送 API 請求到購物車端點");
 
-      const res = await fetch("http://localhost:3000/api/cart", {
+      const res = await fetch(`${API_BASE_URL}/api/cart`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

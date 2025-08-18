@@ -6,6 +6,8 @@ import { useEffect, useState, Suspense } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Comment from "../_components/Comment";
 import OrderDetailSkeleton from "../_components/OrderDetailSkeleton";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
 import {
   FaShippingFast,
@@ -37,7 +39,7 @@ function OrderDetailWithParams() {
     async function fetchOrderDetail() {
       try {
         setIsLoading(true);
-        const res = await fetch(`http://localhost:3000/api/orders/${orderId}`);
+        const res = await fetch(`${API_BASE_URL}/api/orders/${orderId}`);
 
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

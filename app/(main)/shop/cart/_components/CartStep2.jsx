@@ -10,6 +10,8 @@ import CssLoader from "./css-loader";
 import Link from "next/link";
 import { useShip711StoreOpener } from "../../checkout/_hooks/use-ship-711-store";
 import { toast } from "sonner";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
 export default function CartStep2() {
   const { user } = useAuth();
@@ -213,7 +215,7 @@ export default function CartStep2() {
         }
       }
 
-      const response = await fetch("http://localhost:3000/api/orders", {
+      const response = await fetch(`${API_BASE_URL}/api/orders`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

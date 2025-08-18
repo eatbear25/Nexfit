@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 import { v4 as uuidv4 } from "uuid";
 import db from "@/lib/forum-db";
 import { verifyToken } from "@/lib/auth"; // 你自己的驗證函式
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
 function generateOrderNumber() {
   const now = new Date();
@@ -186,8 +188,8 @@ export async function POST(request) {
 
     const paymentUrl =
       payment_method === "ecpay"
-        ? `http://localhost:3000/api/ecpay?amount=${final_total}`
-        : "http://localhost:3000/shop/checkout/success";
+        ? `${API_BASE_URL}/api/ecpay?amount=${final_total}`
+        : `${API_BASE_URL}/shop/checkout/success`;
 
     return NextResponse.json({
       success: true,

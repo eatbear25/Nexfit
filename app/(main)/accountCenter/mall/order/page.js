@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import CssLoader from "@/app/(main)/shop/cart/_components/css-loader";
 import OrderSkeleton from "./_components/OrderSkeleton";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
 export default function OrderPage() {
   const [orderList, setOrderList] = useState([]);
@@ -19,7 +21,7 @@ export default function OrderPage() {
       try {
         setIsLoading(true);
 
-        const res = await fetch("http://localhost:3000/api/orders/user", {
+        const res = await fetch(`${API_BASE_URL}/api/orders/user`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
