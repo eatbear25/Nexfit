@@ -159,7 +159,9 @@ export default function ForumAccount({ params }) {
               className="object-cover w-full h-full"
               onError={(e) => {
                 // 只要不是預設圖才 fallback，避免無限觸發
-                if (!e.target.src.includes("/images/avatars/default-avatar.jpg")) {
+                if (
+                  !e.target.src.includes("/images/avatars/default-avatar.jpg")
+                ) {
                   e.target.src = "/images/avatars/default-avatar.jpg";
                 }
               }}

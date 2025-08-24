@@ -15,6 +15,9 @@ import {
 
 import { useAuth } from "@/app/contexts/AuthContext";
 import { usePathname, useRouter } from "next/navigation";
+
+import CartLoadingSkeleton from "@/app/(main)/shop/cart/_components/CartLoadingSkeleton";
+
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
@@ -52,8 +55,17 @@ function CartProviderCore({ children }) {
       handleAuthInit();
     }
 
+    // 添加超時保護，防止事件永遠不觸發
+    const timeout = setTimeout(() => {
+      if (!window.authInitialized) {
+        debugLog("認證初始化超時，強制設為已初始化");
+        setIsAuthInitialized(true);
+      }
+    }, 2000); // 2秒超時
+
     return () => {
       window.removeEventListener("authInitialized", handleAuthInit);
+      clearTimeout(timeout);
     };
   }, []);
 
@@ -78,7 +90,7 @@ function CartProviderCore({ children }) {
         debugLog("用戶未登入，清空購物車");
         setItems([]);
         setSelectedItems([]);
-        setLoading(false);
+        setLoading(false); // 重要：未登入時也要設為 false
       }
     };
 
@@ -107,7 +119,7 @@ function CartProviderCore({ children }) {
         debugLog("未登入狀態，清空購物車");
         setItems([]);
         setSelectedItems([]);
-        if (isFirstLoad) setLoading(false);
+        setLoading(false); // 重要：確保設為 false
         return;
       }
 
@@ -121,7 +133,7 @@ function CartProviderCore({ children }) {
         debugLog("找不到 token，清空購物車");
         setItems([]);
         setSelectedItems([]);
-        if (isFirstLoad) setLoading(false);
+        setLoading(false); // 重要：確保設為 false
         return;
       }
 
@@ -178,8 +190,8 @@ function CartProviderCore({ children }) {
       setItems([]);
       setSelectedItems([]);
     } finally {
+      setLoading(false); // 無論成功失敗都要設為 false
       if (isFirstLoad) {
-        setLoading(false);
         setIsFirstLoad(false);
         debugLog("首次載入完成");
       }
@@ -189,7 +201,7 @@ function CartProviderCore({ children }) {
   // 添加手動重新載入功能
   const reloadCart = async () => {
     debugLog("手動重新載入購物車");
-    setIsFirstLoad(true);
+    setLoading(true); // 手動重載時設為 true
     await fetchCart();
   };
 
@@ -294,9 +306,8 @@ function CartProviderCore({ children }) {
     selectAllItems,
     deselectAllItems,
     setSelectedItems,
-    reloadCart, // 添加手動重載功能
+    reloadCart,
     debugInfo: {
-      // 添加調試信息
       isAuthInitialized,
       isAuthenticated,
       itemsCount: items.length,
@@ -311,7 +322,7 @@ function CartProviderCore({ children }) {
 
 export function CartProvider({ children }) {
   return (
-    <Suspense fallback={<div>Loading cart...</div>}>
+    <Suspense fallback={<CartLoadingSkeleton />}>
       <CartProviderCore>{children}</CartProviderCore>
     </Suspense>
   );

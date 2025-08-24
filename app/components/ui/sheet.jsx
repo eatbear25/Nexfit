@@ -22,6 +22,10 @@ function SheetPortal({ ...props }) {
   return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />;
 }
 
+const VisuallyHidden = ({ children }) => (
+  <span className="sr-only">{children}</span>
+);
+
 const SheetOverlay = React.forwardRef(function SheetOverlay(
   { className, ...props },
   ref
@@ -39,7 +43,14 @@ const SheetOverlay = React.forwardRef(function SheetOverlay(
   );
 });
 
-function SheetContent({ className, children, side = "right", ...props }) {
+function SheetContent({
+  className,
+  children,
+  side = "right",
+  visuallyHiddenTitle,
+  title,
+  ...props
+}) {
   return (
     <SheetPortal>
       <SheetOverlay />
@@ -59,6 +70,18 @@ function SheetContent({ className, children, side = "right", ...props }) {
         )}
         {...props}
       >
+        {visuallyHiddenTitle ? (
+          <VisuallyHidden>
+            <SheetPrimitive.Title>{visuallyHiddenTitle}</SheetPrimitive.Title>
+          </VisuallyHidden>
+        ) : title ? (
+          <SheetPrimitive.Title className="sr-only">
+            {title}
+          </SheetPrimitive.Title>
+        ) : (
+          <SheetPrimitive.Title className="sr-only">Sheet</SheetPrimitive.Title>
+        )}
+
         {children}
         <SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none cursor-pointer">
           <XIcon className="size-4" />
