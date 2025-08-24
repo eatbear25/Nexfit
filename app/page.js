@@ -23,11 +23,6 @@ import {
   FaWeight,
   FaSpa,
   FaRunning,
-  FaCalendarAlt,
-  FaUtensils,
-  FaBed,
-  FaRecycle,
-  FaSmile,
 } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -122,22 +117,22 @@ const QUIZ_QUESTIONS = [
       {
         text: "戶外大自然",
         value: "outdoor",
-        icon: <FaTree className="w-12 h-12" />,
+        icon: <FaTree className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "室內健身房",
         value: "indoor",
-        icon: <FaDumbbell className="w-12 h-12" />,
+        icon: <FaDumbbell className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "獨自在家",
         value: "home",
-        icon: <FaHome className="w-12 h-12" />,
+        icon: <FaHome className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "團體教室",
         value: "group",
-        icon: <FaUsers className="w-12 h-12" />,
+        icon: <FaUsers className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
     ],
   },
@@ -148,22 +143,22 @@ const QUIZ_QUESTIONS = [
       {
         text: "輕鬆舒緩",
         value: "light",
-        icon: <FaSpa className="w-12 h-12" />,
+        icon: <FaSpa className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "中等強度",
         value: "medium",
-        icon: <FaBalanceScale className="w-12 h-12" />,
+        icon: <FaBalanceScale className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "高強度挑戰",
         value: "high",
-        icon: <FaFire className="w-12 h-12" />,
+        icon: <FaFire className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "混合強度",
         value: "mixed",
-        icon: <FaRandom className="w-12 h-12" />,
+        icon: <FaRandom className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
     ],
   },
@@ -174,22 +169,22 @@ const QUIZ_QUESTIONS = [
       {
         text: "獨自專注",
         value: "solo",
-        icon: <FaUser className="w-12 h-12" />,
+        icon: <FaUser className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "團體互動",
         value: "group",
-        icon: <FaHandshake className="w-12 h-12" />,
+        icon: <FaHandshake className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "一對一指導",
         value: "personal",
-        icon: <FaChalkboardTeacher className="w-12 h-12" />,
+        icon: <FaChalkboardTeacher className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "自由發揮",
         value: "free",
-        icon: <FaDove className="w-12 h-12" />,
+        icon: <FaDove className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
     ],
   },
@@ -200,22 +195,22 @@ const QUIZ_QUESTIONS = [
       {
         text: "減重塑形",
         value: "weight",
-        icon: <FaWeight className="w-12 h-12" />,
+        icon: <FaWeight className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "增肌強身",
         value: "muscle",
-        icon: <FaDumbbell className="w-12 h-12" />,
+        icon: <FaDumbbell className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "放鬆身心",
         value: "relax",
-        icon: <FaSpa className="w-12 h-12" />,
+        icon: <FaSpa className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
       {
         text: "提升體能",
         value: "fitness",
-        icon: <FaRunning className="w-12 h-12" />,
+        icon: <FaRunning className="w-8 h-8 sm:w-12 sm:h-12" />,
       },
     ],
   },
@@ -410,33 +405,6 @@ const SPORT_RECOMMENDATIONS = {
   },
 };
 
-const heroSlides = [
-  {
-    image: "/images/hero1.jpg",
-    title: "純淨補給 × 健康進化",
-    subtitle: "營養補給，可以很簡單",
-    highlight: "簡單",
-  },
-  {
-    image: "/images/hero2.jpg",
-    title: "健康生活 × 活力滿分",
-    subtitle: "每天一點點，改變很大",
-    highlight: "改變很大",
-  },
-  {
-    image: "/images/hero3.jpg",
-    title: "均衡飲食 × 健康人生",
-    subtitle: "從飲食開始，健康每一天",
-    highlight: "健康",
-  },
-  {
-    image: "/images/hero4.jpg",
-    title: "運動習慣 × 美好生活",
-    subtitle: "運動讓生活更精彩",
-    highlight: "精彩",
-  },
-];
-
 function ExploreCoursesSection() {
   const features = [
     {
@@ -444,94 +412,77 @@ function ExploreCoursesSection() {
       title: "客製化訓練",
       desc: "依身體節奏打造專屬訓練方式，從呼吸、動作到步調，每一步都為你量身設計，讓運動真正貼近你的生活。",
       link: "/reservation/course",
-      textGridArea: "1 / 1 / 3 / 5",
-      imageGridArea: "2 / 5 / 4 / 8",
     },
     {
       image: "/images/ExploreCourses02.jpg",
       title: "營養補給",
       desc: "用適合自己的方式補營養，吃得開心才能走得更遠。不節食、不勉強，讓身體與心情都得到支持與滋養。",
       link: "/shop/products",
-      textGridArea: "4 / 8 / 6 / 12",
-      imageGridArea: "5 / 4 / 7 / 8",
     },
     {
       image: "/images/ExploreCourses03.jpg",
       title: "持續練習",
       desc: "一步一腳印地練習與成長，不求快速蛻變，而是專注在每一次的累積中建立長久習慣，打造可持續的健康生活。",
       link: "/reservation/course",
-      textGridArea: "7 / 1 / 9 / 5",
-      imageGridArea: "8 / 5 / 10 / 9",
     },
     {
       image: "/images/ExploreCourses04.jpg",
       title: "與內在連結",
       desc: "健身不只是流汗與燃燒，更是一場探索自我、與內在對話的旅程。相信自己，活出獨一無二的節奏與生活。",
       link: "/forum",
-      textGridArea: "10 / 8 / 12 / 12",
-      imageGridArea: "11 / 4 / 13 / 8",
     },
   ];
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
       viewport={{ once: false, amount: 0.2 }}
-      className="relative bg-[#E7E7E5] overflow-hidden"
+      className="relative bg-[#E7E7E5] overflow-hidden py-8 sm:py-16 lg:py-24"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-        {/*  Grid  */}
-        <div className="grid grid-cols-12 grid-rows-12 gap-4 ">
-          {/* 文字區塊 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-8 sm:space-y-16 lg:space-y-24">
           {features.map((feature, index) => (
             <motion.div
-              key={`text-${index}`}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="z-10 flex flex-col justify-center"
-              style={{ gridArea: feature.textGridArea }}
+              className={`flex flex-col gap-4 sm:gap-8 lg:gap-16 ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              }`}
             >
-              <div className="flex flex-col justify-center items-start text-left bg-transparent">
-                <div className="flex items-baseline gap-4">
-                  <span className="text-5xl md:text-6xl font-extrabold text-[#101828] tracking-tight leading-none select-none ">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-lg md:text-lg font-bold text-[#101828]">
-                    {feature.title}
-                  </span>
+              {/* 文字區塊 */}
+              <div className="flex-1 flex flex-col justify-center order-2 lg:order-none">
+                <div className="max-w-lg mx-auto lg:mx-0 px-4 lg:px-0">
+                  <div className="flex items-baseline gap-2 sm:gap-4 mb-4">
+                    <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#101828] tracking-tight leading-none select-none">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#101828]">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  <p className="text-[#101828] text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
+                    {feature.desc}
+                  </p>
                 </div>
-                <p className="text-[#101828] text-base md:text-base font-medium max-w-xl leading-relaxed">
-                  {feature.desc}
-                </p>
               </div>
-            </motion.div>
-          ))}
 
-          {/* 圖片區塊 */}
-          {features.map((feature, index) => (
-            <motion.div
-              key={`image-${index}`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="z-10 flex justify-center items-center"
-              style={{ gridArea: feature.imageGridArea }}
-            >
-              <a href={feature.link} className="group" tabIndex={-1}>
-                <div className="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl cursor-pointer bg-white">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    width={350}
-                    height={350}
-                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
-              </a>
+              {/* 圖片區塊 */}
+              <div className="flex-1 flex justify-center items-center order-1 lg:order-none">
+                <a href={feature.link} className="group">
+                  <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl cursor-pointer bg-white">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -540,7 +491,6 @@ function ExploreCoursesSection() {
   );
 }
 
-// 行事曆課程資料與隨機排程
 const weekDays = ["週一", "週二", "週三", "週四", "週五", "週六", "週日"];
 const courseList = [
   { title: "高效有氧燃脂課程", teacher: "Lynn" },
@@ -554,10 +504,12 @@ const courseList = [
   { title: "全身循環運動課程", teacher: "Peggy" },
   { title: "肌肉放鬆與筋膜釋放", teacher: "Howard" },
 ];
+
 function getDeterministicTime(idx) {
   const times = ["10:00", "14:00", "16:00", "18:00", "19:00", "20:00"];
   return times[idx % times.length];
 }
+
 const scheduledCourses = weekDays.map((day, idx) => {
   const course = courseList[idx % courseList.length];
   return {
@@ -567,6 +519,7 @@ const scheduledCourses = weekDays.map((day, idx) => {
     teacher: course.teacher,
   };
 });
+
 // 月曆資料生成
 function getDaysInMonth(year, month) {
   return new Date(year, month + 1, 0).getDate();
@@ -764,23 +717,32 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col overflow-hidden scroll-smooth snap-y snap-mandatory bg-[#E7E7E5]">
+    <div className="scroll-smooth bg-[#E7E7E5]">
       <Navbar />
       {isLoginModalOpen && <LoginModal onClose={closeLoginModal} />}
-      <main className="flex-grow snap-y snap-mandatory scroll-smooth ">
+      <main className="scroll-smooth">
         {/* Hero 區塊 - 輪播圖 */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="relative w-full aspect-[16/9] snap-start"
+          className="relative w-full h-screen"
         >
+          {/* 桌面版圖片 */}
           <Image
             src="/index3.jpg"
             alt="首頁"
             fill
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full lg:block hidden"
+          />
+
+          {/* 手機版圖片 */}
+          <Image
+            src="/index3-mobile.jpg"
+            alt="首頁"
+            fill
+            className="object-cover w-full h-full block lg:hidden"
           />
         </motion.section>
 
@@ -799,74 +761,32 @@ export default function Home() {
           />
         </motion.section>
 
-        {/* 過渡區塊 */}
-        <motion.section
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.3, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.2 }}
-          className="w-full h-[80vh] snap-start flex items-stretch justify-center relative bg-[#7F9161] overflow-hidden"
-        >
-          <div className="flex flex-row items-stretch w-full h-full">
-            {/* 左側文字 */}
-            <div className="flex-[1] flex flex-col justify-center z-10 px-10">
-              <h2 className="text-4xl lg:text-5xl font-bold  text-[#FBF9FA] text-center mb-10">
-                ABOUT NEXFIT
-              </h2>
-              <p className="font-medium md:text-lg text-[#FBF9FA] leading-relaxed mb-6 text-center">
-                NEXFIT是一個致力於推動健康生活與持續運動的平台，我們相信
-                <br />
-                「每個人都能在自己的節奏中，找到屬於自己的健康方式。」
-              </p>
-              <p className="font-medium md:text-lg text-[#FBF9FA] leading-relaxed mb-6 text-center">
-                我們整合了運動課程、營養補給、數據追蹤、社群互動與成就系統，
-                <br />
-                打造出一個全方位的健康生態圈。
-              </p>
-              <p className="font-medium md:text-lg text-[#FBF9FA] leading-relaxed mb-6 text-center">
-                無論你是剛起步的新手還是正在突破瓶頸的進階者，
-                <br />
-                我們都希望成為你生活中最穩定的支持。
-              </p>
-            </div>
-            {/* 右側圖 */}
-            <div className="flex-[1.5] h-full">
-              <img
-                src="/images/about.jpg"
-                alt="About Us"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: "center center" }}
-              />
-            </div>
-          </div>
-        </motion.section>
-
         {/* 探索課程特色區塊 */}
         <ExploreCoursesSection />
 
-        {/* 過渡區塊2 */}
+        {/* 過渡區塊2 - 響應式優化 */}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.3, delay: 0.2 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="w-full h-[80vh] snap-start flex items-stretch justify-center relative bg-[#7F9161] overflow-hidden"
+          className="w-full flex flex-col lg:flex-row items-stretch justify-center relative"
         >
-          <div className="flex flex-row items-center w-full h-full">
+          <div className="flex flex-col lg:flex-row items-center w-full h-full py-6 lg:py-10">
             {/* 左側圖片 */}
-            <div className="flex-[1.5] flex items-center justify-center w-full">
+            <div className="flex items-center justify-center w-full lg:w-1/2 brightness-85">
               <img
                 src="/images/about2.jpg"
                 alt="About Us"
-                className=" w-full h-auto object-contain"
+                className="w-full h-[30vh] sm:h-[40vh] lg:h-[50vh] object-cover"
                 style={{ objectPosition: "left center" }}
               />
             </div>
-            <div className="flex-[1] flex flex-col justify-center z-10">
-              <h2 className="text-5xl font-bold mb-10 text-[#FBF9FA] text-center">
+            <div className="flex flex-col w-full h-[30vh] sm:h-[40vh] lg:h-[50vh] lg:w-1/2 justify-center bg-[#7F9161] px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-10 text-[#FBF9FA] text-center">
                 OUR PURPOSE
               </h2>
-              <p className="font-medium md:text-lg text-[#FBF9FA] leading-relaxed mb-6 text-center">
+              <p className="font-medium text-sm sm:text-base lg:text-lg text-[#FBF9FA] leading-relaxed text-center">
                 NEXFIT 打造一個「真實可持續的健康生活系統」
                 <br />
                 我們相信健康管理不是一個壓力沉重的任務，
@@ -877,31 +797,33 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 熱門排行榜 */}
+        {/* 熱門排行榜 - 響應式優化 */}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="min-h-[80vh] bg-[#E7E7E5] flex flex-col justify-center relative py-16"
+          className="min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] bg-[#E7E7E5] flex flex-col justify-center relative py-8 sm:py-12 lg:py-16"
         >
-          {/* 標題與箭頭同一行 */}
-          <div className="flex items-center justify-between px-16 mb-10">
-            <div className="flex items-end gap-4">
-              <span className="text-5xl font-bold">Ranking</span>
-              <span className="text-lg font-bold text-[#101828]">
-                {"熱銷排行｜補給專區"}
+          {/* 標題與箭頭同一行 - 響應式優化 */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-4 sm:px-8 lg:px-16 mb-6 lg:mb-10 gap-4 sm:gap-6 lg:gap-10">
+            <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4">
+              <span className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+                Ranking
+              </span>
+              <span className="text-sm sm:text-base lg:text-lg font-bold text-[#101828]">
+                熱銷排行｜補給專區
               </span>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-2 sm:gap-4">
               <button
-                className="group w-12 h-12 bg-[#F0F0F0] rounded-full flex items-center justify-center shadow-lg transition hover:bg-[#7F9161]"
+                className="group w-10 h-10 sm:w-12 sm:h-12 bg-[#F0F0F0] rounded-full flex items-center justify-center shadow-lg transition hover:bg-[#7F9161] cursor-pointer"
                 onClick={() => swiperRef.current?.slidePrev()}
                 type="button"
                 aria-label="上一個"
               >
                 <svg
-                  className="w-6 h-6 text-gray-700 transition group-hover:text-white"
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 transition group-hover:text-white"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="3"
@@ -915,13 +837,13 @@ export default function Home() {
                 </svg>
               </button>
               <button
-                className="group w-12 h-12 bg-[#F0F0F0] rounded-full flex items-center justify-center shadow-lg transition hover:bg-[#7F9161]"
+                className="group w-10 h-10 sm:w-12 sm:h-12 bg-[#F0F0F0] rounded-full flex items-center justify-center shadow-lg transition hover:bg-[#7F9161] cursor-pointer"
                 onClick={() => swiperRef.current?.slideNext()}
                 type="button"
                 aria-label="下一個"
               >
                 <svg
-                  className="w-6 h-6 text-gray-700 transition group-hover:text-white"
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 transition group-hover:text-white"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="3"
@@ -940,16 +862,33 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="px-12 relative"
+            className="px-4 sm:px-8 lg:px-12 relative"
           >
             <Swiper
               modules={[Navigation]}
-              spaceBetween={32}
+              spaceBetween={16}
               slidesPerView={"auto"}
               breakpoints={{
-                640: { slidesPerView: "auto" },
-                768: { slidesPerView: "auto" },
-                1024: { slidesPerView: "auto" },
+                320: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 12,
+                },
+                480: {
+                  slidesPerView: 1.5,
+                  spaceBetween: 16,
+                },
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2.5,
+                  spaceBetween: 24,
+                },
+                1024: {
+                  slidesPerView: "auto",
+                  spaceBetween: 32,
+                },
               }}
               className="w-full"
               onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -957,25 +896,25 @@ export default function Home() {
               {products.map((product, idx) => (
                 <SwiperSlide
                   key={product.id}
-                  className="!w-72 flex flex-col items-center"
+                  className="!w-60 sm:!w-72 flex flex-col items-center"
                 >
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="w-72 h-72 object-cover mb-3 rounded-xl"
+                    className="w-60 h-60 sm:w-72 sm:h-72 object-cover mb-3 rounded-xl"
                   />
-                  <div className="text-center">
-                    <h3 className="text-sm font-medium mb-1">
+                  <div className="text-center px-2">
+                    <h3 className="text-xs sm:text-sm font-medium mb-1">
                       {product.title}
                     </h3>
                     <div className="flex flex-col items-center">
                       {product.originalPrice && (
-                        <span className=" line-through text-sm mb-1">
+                        <span className="line-through text-xs sm:text-sm mb-1">
                           NT${product.originalPrice}
                         </span>
                       )}
                       <span
-                        className="text-sm font-medium"
+                        className="text-xs sm:text-sm font-medium"
                         style={{
                           color: product.originalPrice ? "#7F9161" : "",
                           fontWeight: product.originalPrice ? "bold" : "",
@@ -983,19 +922,6 @@ export default function Home() {
                       >
                         NT${product.price}
                       </span>
-                      {/* 星星評等 */}
-                      {/* <div className="flex justify-center mt-2 gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <svg key={i} className="w-5 h-5" viewBox="0 0 20 20">
-                            <path
-                              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.462a1 1 0 00-.364 1.118l1.286 3.966c.3.921-.755 1.688-1.54 1.118l-3.388-2.462a1 1 0 00-1.176 0l-3.388 2.462c-.784.57-1.838-.197-1.539-1.118l1.286-3.966a1 1 0 00-.364-1.118L2.045 9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.967z"
-                              fill={i < product.rating ? "#FFE03C" : "#E0E0E0"}
-                              // stroke="#D4D4D9"
-                              // strokeWidth="1"
-                            />
-                          </svg>
-                        ))}
-                      </div> */}
                     </div>
                   </div>
                 </SwiperSlide>
@@ -1004,18 +930,18 @@ export default function Home() {
           </motion.div>
         </motion.section>
 
-        {/* 心理測驗卡牌遊戲區塊 */}
+        {/* 心理測驗卡牌遊戲區塊 - 響應式優化 */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="w-full min-h-[60vh] bg-[#E7E7E5] items-center justify-center py relative overflow-hidden"
+          className="w-full min-h-[60vh] bg-[#E7E7E5] items-center justify-center py-8 sm:py-12 relative overflow-hidden"
         >
-          <h2 className="text-5xl font-bold mb-4 text-center text-[#7F9161]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-center text-[#7F9161] px-4">
             找到專屬於你的健身之旅
           </h2>
-          <div className="w-full p-12 mx-auto text-gray-800">
+          <div className="w-full p-4 sm:p-8 lg:p-12 mx-auto text-gray-800">
             {!quizStarted ? null : !showResult ? (
               <motion.div
                 key={currentQuestion}
@@ -1026,20 +952,20 @@ export default function Home() {
                   duration: 0.6,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="space-y-8"
+                className="space-y-4 sm:space-y-6 lg:space-y-8"
               >
-                {/* 選擇歷史區域 */}
+                {/* 選擇歷史區域 - 響應式優化 */}
                 {currentQuestion > 0 && (
                   <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="mb-8 p-4"
+                    className="mb-4 sm:mb-6 lg:mb-8 p-2 sm:p-4"
                   >
-                    <h4 className="text-sm font-semibold text-gray-600 mb-2">
+                    <h4 className="text-xs sm:text-sm font-semibold text-gray-600 mb-2">
                       你的選擇：
                     </h4>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2 sm:gap-3">
                       {answers.map((answer, index) => {
                         const question = QUIZ_QUESTIONS[index];
                         const selectedOption = question.options.find(
@@ -1056,14 +982,15 @@ export default function Home() {
                               type: "spring",
                               stiffness: 100,
                             }}
-                            className="flex items-center gap-2 px-3 py-2"
+                            className="flex items-center gap-2 px-2 sm:px-3 py-1 sm:py-2"
                           >
                             <span>
                               {React.cloneElement(selectedOption.icon, {
-                                className: "w-5 h-5 text-[#7F9161]",
+                                className:
+                                  "w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#7F9161]",
                               })}
                             </span>
-                            <span className="text-sm text-gray-700">
+                            <span className="text-xs sm:text-sm text-gray-700">
                               {selectedOption.text}
                             </span>
                           </motion.div>
@@ -1073,14 +1000,14 @@ export default function Home() {
                   </motion.div>
                 )}
 
-                {/* 白色區塊包含標題、描述和卡牌 */}
+                {/* 白色區塊包含標題、描述和卡牌 - 響應式優化 */}
                 <div className="w-full flex justify-center items-center">
                   <motion.div
-                    className={`w-4/5 h-170 flex flex-col justify-center items-center ${
+                    className={`w-[95%] sm:w-[90%] lg:w-4/5 flex flex-col justify-center items-center ${
                       currentQuestion > 0
                         ? "bg-[url(/images/s6.jpg)] bg-cover bg-center bg-no-repeat"
                         : "bg-[#FBF9FA]"
-                    } rounded-[60px] py-12 px-8`}
+                    } rounded-[30px] sm:rounded-[40px] lg:rounded-[60px] py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-8`}
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{
@@ -1098,9 +1025,9 @@ export default function Home() {
                       backgroundRepeat: "no-repeat",
                     }}
                   >
-                    {/* 問題描述 */}
+                    {/* 問題描述 - 響應式優化 */}
                     <motion.p
-                      className={`text-xl font-medium text-center mb-20 ${
+                      className={`text-sm sm:text-lg lg:text-xl font-medium text-center mb-6 sm:mb-12 lg:mb-20 ${
                         currentQuestion > 0 ? "text-[#FBF9FA]" : "text-gray-800"
                       }`}
                       initial={{ opacity: 0, y: 30 }}
@@ -1114,13 +1041,13 @@ export default function Home() {
                       {QUIZ_QUESTIONS[currentQuestion].question}
                     </motion.p>
 
-                    {/* 卡牌區域 */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+                    {/* 卡牌區域 - 響應式優化 */}
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-10 max-w-full">
                       {QUIZ_QUESTIONS[currentQuestion].options.map(
                         (option, index) => (
                           <motion.div
                             key={index}
-                            className="w-60 h-80 cursor-pointer group"
+                            className="w-32 h-40 sm:w-40 sm:h-52 lg:w-60 lg:h-80 cursor-pointer group"
                             initial={{
                               opacity: 0,
                               y: 50,
@@ -1139,7 +1066,7 @@ export default function Home() {
                               damping: 15,
                             }}
                             whileHover={{
-                              scale: 1.07,
+                              scale: 1.05,
                               rotateY: 5,
                               transition: { duration: 0.3 },
                             }}
@@ -1148,7 +1075,6 @@ export default function Home() {
                               transition: { duration: 0.1 },
                             }}
                             onClick={() => {
-                              // 點擊時的動畫效果
                               const card = document.getElementById(
                                 `card-${index}`
                               );
@@ -1170,7 +1096,7 @@ export default function Home() {
                           >
                             <div
                               id={`card-${index}`}
-                              className="w-full h-full flex flex-col items-center justify-center bg-[#7F9161] rounded-2xl hover:shadow-lg transition-all duration-300 overflow-hidden relative"
+                              className="w-full h-full flex flex-col items-center justify-center bg-[#7F9161] rounded-xl lg:rounded-2xl hover:shadow-lg transition-all duration-300 overflow-hidden relative"
                               style={{
                                 transformStyle: "preserve-3d",
                               }}
@@ -1180,20 +1106,20 @@ export default function Home() {
                                   <img
                                     src={`/images/quz${index + 1}.jpg`}
                                     alt={option.text}
-                                    className="w-full h-full object-cover rounded-2xl"
+                                    className="w-full h-full object-cover rounded-xl lg:rounded-2xl"
                                   />
                                   <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="text-[#FBF9FA] text-2xl font-bold drop-shadow">
+                                    <span className="text-[#FBF9FA] text-sm sm:text-lg lg:text-2xl font-bold drop-shadow text-center px-2">
                                       {option.text}
                                     </span>
                                   </div>
                                 </>
                               ) : (
                                 <>
-                                  <div className="text-6xl mb-6 text-[#FBF9FA]">
+                                  <div className="text-3xl sm:text-4xl lg:text-6xl mb-3 sm:mb-4 lg:mb-6 text-[#FBF9FA]">
                                     {option.icon}
                                   </div>
-                                  <div className="text-lg font-semibold text-[#FBF9FA]">
+                                  <div className="text-xs sm:text-sm lg:text-lg font-semibold text-[#FBF9FA] text-center px-2">
                                     {option.text}
                                   </div>
                                 </>
@@ -1206,17 +1132,17 @@ export default function Home() {
                   </motion.div>
                 </div>
 
-                {/* 進度指示器 */}
+                {/* 進度指示器 - 響應式優化 */}
                 <motion.div
-                  className="flex justify-between items-center mt-6"
+                  className="flex justify-between items-center mt-4 sm:mt-6 px-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.2, duration: 0.5 }}
                 >
-                  <span className="text-sm text-[#7F9161]">
+                  <span className="text-xs sm:text-sm text-[#7F9161]">
                     問題 {currentQuestion + 1} / {QUIZ_QUESTIONS.length}
                   </span>
-                  <div className="flex gap-2">
+                  <div className="flex gap-1 sm:gap-2">
                     {QUIZ_QUESTIONS.map((_, index) => (
                       <motion.div
                         key={index}
@@ -1228,7 +1154,7 @@ export default function Home() {
                           type: "spring",
                           stiffness: 200,
                         }}
-                        className={`w-2 h-2 rounded-full transition-colors duration-100 ${
+                        className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-colors duration-100 ${
                           index === currentQuestion
                             ? "bg-[#8e9568]"
                             : "bg-[#a9ba5c]"
@@ -1246,27 +1172,28 @@ export default function Home() {
                   duration: 0.8,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="text-center space-y-6"
+                className="text-center space-y-4 sm:space-y-6 px-4"
               >
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-[#b85e39] to-[#ffc99d] bg-clip-text text-transparent">
+                <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#b85e39] to-[#ffc99d] bg-clip-text text-transparent">
                   {result.title}
                 </h3>
-                <p className="text-gray-700">{result.description}</p>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  {result.description}
+                </p>
                 <div className="relative flex justify-center items-center aspect-square max-w-xs mx-auto">
-                  {/* 歷史標籤可自訂 top 與左右位置 */}
+                  {/* 歷史標籤 - 響應式優化 */}
                   {(() => {
-                    // 自訂這個陣列
                     const labelPositions = [
-                      { top: 10, side: "left", offset: -220 },
-                      { top: 30, side: "right", offset: -220 },
-                      { top: 50, side: "left", offset: -200 },
-                      { top: 70, side: "right", offset: -200 },
+                      { top: 10, side: "left", offset: -120 },
+                      { top: 30, side: "right", offset: -120 },
+                      { top: 50, side: "left", offset: -100 },
+                      { top: 70, side: "right", offset: -100 },
                     ];
                     return answers.map((answer, index) => {
                       const pos = labelPositions[index] || {
                         top: 10 + index * 20,
                         side: index % 2 === 0 ? "left" : "right",
-                        offset: -180,
+                        offset: -100,
                       };
                       const question = QUIZ_QUESTIONS[index];
                       const selectedOption = question.options.find(
@@ -1281,7 +1208,7 @@ export default function Home() {
                           }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.2 }}
-                          className="flex items-center gap-3 absolute z-10"
+                          className="hidden sm:flex items-center gap-2 sm:gap-3 absolute z-10"
                           style={{
                             top: `${pos.top}%`,
                             [pos.side]: `${pos.offset}px`,
@@ -1289,10 +1216,11 @@ export default function Home() {
                         >
                           <span>
                             {React.cloneElement(selectedOption.icon, {
-                              className: "w-7 h-7 text-[#7F9161]",
+                              className:
+                                "w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-[#7F9161]",
                             })}
                           </span>
-                          <span className="text-lg text-gray-700 font-semibold whitespace-nowrap">
+                          <span className="text-sm sm:text-base lg:text-lg text-gray-700 font-semibold whitespace-nowrap">
                             {selectedOption.text}
                           </span>
                         </motion.div>
@@ -1306,16 +1234,45 @@ export default function Home() {
                     className="w-full h-full object-contain bg-gray-100 z-0"
                   />
                 </div>
-                <div className="flex gap-4 justify-center">
+                {/* 手機版顯示選擇歷史 */}
+                <div className="sm:hidden">
+                  <h4 className="text-sm font-semibold text-gray-600 mb-2">
+                    你的選擇：
+                  </h4>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {answers.map((answer, index) => {
+                      const question = QUIZ_QUESTIONS[index];
+                      const selectedOption = question.options.find(
+                        (opt) => opt.value === answer
+                      );
+                      return (
+                        <div
+                          key={index}
+                          className="flex items-center gap-2 px-2 py-1 bg-gray-100 rounded-full"
+                        >
+                          <span>
+                            {React.cloneElement(selectedOption.icon, {
+                              className: "w-4 h-4 text-[#7F9161]",
+                            })}
+                          </span>
+                          <span className="text-xs text-gray-700">
+                            {selectedOption.text}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                   <button
                     onClick={resetQuiz}
-                    className="px-6 py-2 bg-[#7F9161] text-[#FBF9FA] rounded-full hover:bg-[#7F9161]/90 transition shadow-lg cursor-pointer"
+                    className="px-4 sm:px-6 py-2 bg-[#7F9161] text-[#FBF9FA] rounded-full hover:bg-[#7F9161]/90 transition shadow-lg cursor-pointer text-sm sm:text-base"
                   >
                     重新測驗
                   </button>
                   <Link
                     href="/reservation/course"
-                    className="px-6 py-2 bg-[#7F9161] text-[#FBF9FA] rounded-full hover:bg-[#7F9161]/90 transition shadow-lg cursor-pointer"
+                    className="px-4 sm:px-6 py-2 bg-[#7F9161] text-[#FBF9FA] rounded-full hover:bg-[#7F9161]/90 transition shadow-lg cursor-pointer text-sm sm:text-base"
                   >
                     查看相關課程
                   </Link>
@@ -1325,26 +1282,28 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 行事曆區塊 */}
+        {/* 行事曆區塊 - 響應式優化 */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="w-full min-h-[60vh] bg-[#E7E7E5] flex items-center justify-center py-12"
+          className="w-full min-h-[60vh] bg-[#E7E7E5] flex items-center justify-center py-8 sm:py-12"
         >
-          <div className="w-full">
-            <div className="flex items-end gap-4 px-16 mb-15">
-              <h2 className="text-5xl font-bold  text-start">Booking</h2>
-              <span className="text-lg font-bold text-[#101828]">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4 px-4 sm:px-8 lg:px-16 mb-8 sm:mb-12 lg:mb-15">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-start">
+                Booking
+              </h2>
+              <span className="text-sm sm:text-base lg:text-lg font-bold text-[#101828]">
                 預約課程行事曆
               </span>
             </div>
 
-            {/* 週/月切換按鈕 */}
-            <div className="flex justify-center gap-4 mb-6">
+            {/* 週/月切換按鈕 - 響應式優化 */}
+            <div className="flex justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
               <button
-                className={`px-4 py-2 rounded ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded text-sm sm:text-base cursor-pointer ${
                   calendarMode === "week"
                     ? "bg-[#7F9161] text-[#FBF9FA]"
                     : "bg-[#FBF9FA] text-[#7F9161] border border-[#7F9161]"
@@ -1354,7 +1313,7 @@ export default function Home() {
                 週曆
               </button>
               <button
-                className={`px-4 py-2 rounded ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded text-sm sm:text-base cursor-pointer ${
                   calendarMode === "month"
                     ? "bg-[#7F9161] text-[#FBF9FA]"
                     : "bg-[#FBF9FA] text-[#7F9161] border border-[#7F9161]"
@@ -1364,18 +1323,18 @@ export default function Home() {
                 月曆
               </button>
             </div>
-            {/* 週曆/月曆 */}
+            {/* 週曆/月曆 - 響應式優化 */}
             {calendarMode === "week" ? (
               <section className="w-full bg-[#E7E7E5] p-0 m-0">
-                <div className="grid grid-cols-7 gap-8 w-full px-14">
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-4 lg:gap-8 w-full px-2 sm:px-8 lg:px-14">
                   {weekDays.map((day) => {
                     const course = scheduledCourses.find((c) => c.day === day);
                     return (
                       <div
                         key={day}
-                        className="p-6 min-h-[180px] flex flex-col items-center"
+                        className="p-2 sm:p-4 lg:p-6 min-h-[120px] sm:min-h-[150px] lg:min-h-[180px] flex flex-col items-center bg-white rounded-lg shadow-sm"
                       >
-                        <div className="font-bold mb-4 text-xl text-[#7F9161]">
+                        <div className="font-bold mb-2 sm:mb-3 lg:mb-4 text-sm sm:text-lg lg:text-xl text-[#7F9161]">
                           {day}
                         </div>
                         {course && (
@@ -1383,16 +1342,16 @@ export default function Home() {
                             href={`/reservation/course/${
                               courseIdMap[course.title]
                             }`}
-                            className="block hover:bg-[#7F9161]/10 rounded transition cursor-pointer w-full"
+                            className="block hover:bg-[#7F9161]/10 rounded transition cursor-pointer w-full text-center"
                           >
-                            <div className="text-center mb-2">
-                              <div className="text-lg font-semibold">
+                            <div className="mb-1 sm:mb-2">
+                              <div className="text-sm sm:text-base lg:text-lg font-semibold">
                                 {course.time}
                               </div>
-                              <div className="text-base mt-1">
+                              <div className="text-xs sm:text-sm lg:text-base mt-1 leading-tight">
                                 {course.title}
                               </div>
-                              <div className="text-base text-zinc-500 mt-1">
+                              <div className="text-xs sm:text-sm lg:text-base text-zinc-500 mt-1">
                                 {course.teacher}
                               </div>
                             </div>
@@ -1404,48 +1363,48 @@ export default function Home() {
                 </div>
               </section>
             ) : (
-              <div className="w-full max-w-5xl mx-auto mt-8">
-                {/* 月份切換與顯示 */}
-                <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="w-full max-w-5xl mx-auto mt-4 sm:mt-6 lg:mt-8">
+                {/* 月份切換與顯示 - 響應式優化 */}
+                <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                   <button
                     onClick={handlePrevMonth}
-                    className="px-2 py-1 rounded bg-white border"
+                    className="px-2 sm:px-3 py-1 sm:py-2 rounded bg-white border text-sm sm:text-base"
                   >
                     &#60;
                   </button>
-                  <span className="font-bold text-lg">
+                  <span className="font-bold text-base sm:text-lg">
                     {calendarYear}年 {calendarMonth + 1}月
                   </span>
                   <button
                     onClick={handleNextMonth}
-                    className="px-2 py-1 rounded bg-white border"
+                    className="px-2 sm:px-3 py-1 sm:py-2 rounded bg-white border text-sm sm:text-base"
                   >
                     &#62;
                   </button>
                 </div>
-                {/* 星期標題 */}
-                <div className="grid grid-cols-7 gap-3 mb-2">
+                {/* 星期標題 - 響應式優化 */}
+                <div className="grid grid-cols-7 gap-1 sm:gap-2 lg:gap-3 mb-2">
                   {weekDays.map((day) => (
                     <div
                       key={day}
-                      className="text-center font-semibold text-[#7F9161]"
+                      className="text-center font-semibold text-[#7F9161] text-xs sm:text-sm lg:text-base"
                     >
                       {day}
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-7 gap-3">
+                <div className="grid grid-cols-7 gap-1 sm:gap-2 lg:gap-3">
                   {/* 填充月初空白 */}
                   {Array.from(
                     { length: getFirstDayOfMonth(calendarYear, calendarMonth) },
                     (_, i) => (
                       <div
                         key={`empty-${i}`}
-                        className="bg-gray-50 rounded-lg shadow p-2 min-h-[80px]"
+                        className="bg-gray-50 rounded-lg shadow p-1 sm:p-2 min-h-[60px] sm:min-h-[70px] lg:min-h-[80px]"
                       />
                     )
                   )}
-                  {/* 日期格子 */}
+                  {/* 日期格子 - 響應式優化 */}
                   {monthDaysDynamic.map((day) => {
                     const course = scheduledMonthCoursesDynamic.find(
                       (c) => c.day === day
@@ -1453,9 +1412,9 @@ export default function Home() {
                     return (
                       <div
                         key={day}
-                        className="bg-white rounded-lg shadow p-2 min-h-[80px] flex flex-col items-center"
+                        className="bg-white rounded-lg shadow p-1 sm:p-2 min-h-[60px] sm:min-h-[70px] lg:min-h-[80px] flex flex-col items-center"
                       >
-                        <div className="font-bold mb-1 text-[#7F9161]">
+                        <div className="font-bold mb-1 text-[#7F9161] text-xs sm:text-sm">
                           {day}
                         </div>
                         {course && (
@@ -1463,14 +1422,16 @@ export default function Home() {
                             href={`/reservation/course/${
                               courseIdMap[course.title]
                             }`}
-                            className="block hover:bg-[#7F9161]/10 rounded transition cursor-pointer"
+                            className="block hover:bg-[#7F9161]/10 rounded transition cursor-pointer text-center"
                           >
-                            <div className="text-center mb-1">
-                              <div className="text-xs font-semibold">
+                            <div className="mb-1">
+                              <div className="text-[8px] sm:text-xs font-semibold">
                                 {course.time}
                               </div>
-                              <div className="text-xs">{course.title}</div>
-                              <div className="text-xs text-zinc-600">
+                              <div className="text-[8px] sm:text-xs leading-tight">
+                                {course.title}
+                              </div>
+                              <div className="text-[8px] sm:text-xs text-zinc-600">
                                 {course.teacher}
                               </div>
                             </div>
@@ -1484,26 +1445,29 @@ export default function Home() {
             )}
           </div>
         </motion.section>
-        {/* GOOGLE 地圖區塊 */}
+
+        {/* GOOGLE 地圖區塊 - 響應式優化 */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="w-full min-h-[60vh] bg-[#E7E7E5] flex flex-col items-center justify-center py-12"
+          className="w-full min-h-[60vh] bg-[#E7E7E5] flex flex-col items-center justify-center py-8 sm:py-12"
         >
-          {/* 標題 */}
-          <div className="flex items-end gap-4 px-16 mb-15">
-            <h2 className="text-5xl font-bold  text-start tracking-wide	">
+          {/* 標題 - 響應式優化 */}
+          <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4 px-4 sm:px-8 lg:px-16 mb-8 sm:mb-12 lg:mb-15 text-center sm:text-left">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide">
               Where to find us
             </h2>
-            <span className="text-lg font-bold text-[#101828]">與我們相遇</span>
+            <span className="text-sm sm:text-base lg:text-lg font-bold text-[#101828]">
+              與我們相遇
+            </span>
           </div>
 
-          {/* 地圖與資訊橫向排列 */}
-          <div className="flex flex-col md:flex-row gap-24 w-full max-w-5xl">
-            {/* 地圖 */}
-            <div className="flex-[1] min-w-[250px] h-[600px] md:h-[400px] rounded-lg overflow-hidden shadow-lg border border-gray-200 ">
+          {/* 地圖與資訊橫向排列 - 響應式優化 */}
+          <div className="flex flex-col lg:flex-row gap-6 sm:gap-12 lg:gap-24 w-full max-w-6xl px-4 sm:px-6">
+            {/* 地圖 - 響應式優化 */}
+            <div className="flex-1 min-w-0 h-[300px] sm:h-[400px] lg:h-[400px] rounded-lg overflow-hidden shadow-lg border border-gray-200">
               <iframe
                 title="Google Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.017367129919!2d120.2932479!3d22.6283906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0463352ebb51:0x5f532bceeb1713ca!2zODAx6auY6ZuE5biC5YmN6YeR5Y2A5Lit5q2j5Zub6LevMjEx6Jmf!5e0!3m2!1szh-TW!2stw!4v1680000000000!5m2!1szh-TW!2stw"
@@ -1516,16 +1480,20 @@ export default function Home() {
               ></iframe>
             </div>
 
-            {/* 地址資訊 */}
-            <div className="flex-[1] flex flex-col justify-center items-start pl-6">
-              <p className="text-lg font-medium mb-2">
+            {/* 地址資訊 - 響應式優化 */}
+            <div className="flex-1 flex flex-col justify-center items-start px-4 sm:px-6 lg:pl-6 text-center lg:text-left">
+              <p className="text-base sm:text-lg font-medium mb-2">
                 高雄市中正四路211號8樓之1
               </p>
-              <p className="font-medium mb-2">電話：07-9699-885</p>
-              <p className="font-medium mb-2">
+              <p className="text-sm sm:text-base font-medium mb-2">
+                電話：07-9699-885
+              </p>
+              <p className="text-sm sm:text-base font-medium mb-2">
                 營業時間：週一至週日 08:00-22:00
               </p>
-              <p className="font-medium">歡迎蒞臨或來電洽詢！</p>
+              <p className="text-sm sm:text-base font-medium">
+                歡迎蒞臨或來電洽詢！
+              </p>
             </div>
           </div>
         </motion.section>

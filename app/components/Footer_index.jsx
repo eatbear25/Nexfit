@@ -7,52 +7,55 @@ import { socialLinks, sections } from "/app/config/footerSection";
 
 export default function Footer() {
   return (
-    <footer className="w-full flex bg-white py-8 flex-col justify-end h-full mt-8">
-      <div className=" h-full">
-        <div className=" p-5 h-full">
-          <div className="flex-row px-20">
-            <div className="my-6 flex justify-between ">
-              <p className="text-5xl text-[#101828] font-bold">NEXFIT</p>
-              <div className="flex ">
-                {socialLinks.map((sL) => (
-                  <Link href={sL.href} key={sL.id} className="ml-7">
-                    <Image
-                      src={sL.icon}
-                      alt="Account Icon"
-                      width={30}
-                      height={30}
-                      className={sL.isLast ? "mr-7" : ""}
-                    />
+    <footer className="w-full bg-white py-8 mt-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header section with logo and social links */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl text-[#101828] font-bold">
+            NEXFIT
+          </h2>
+          <div className="flex gap-3 sm:gap-6">
+            {socialLinks.map((sL) => (
+              <Link
+                href={sL.href}
+                key={sL.id}
+                className="hover:opacity-70 transition-opacity"
+              >
+                <Image
+                  src={sL.icon}
+                  alt="Social media icon"
+                  width={30}
+                  height={30}
+                  className="w-5 h-5 sm:w-7 sm:h-7 lg:w-8 lg:h-8"
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Navigation sections */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-4">
+          {sections.map((section) => (
+            <div key={section.id} className="flex flex-col">
+              <div className="mb-3">
+                <h3 className="text-lg sm:text-2xl lg:text-3xl text-[#101828] font-semibold mb-2">
+                  {section.title}
+                </h3>
+              </div>
+              <div className="flex flex-col gap-2">
+                {section.links.map((link) => (
+                  <Link
+                    key={link.id}
+                    href={link.href}
+                    className="text-base font-bold leading-relaxed hover:text-[#AFC16D] transition-colors"
+                    id={link.id}
+                  >
+                    {link.text}
                   </Link>
                 ))}
               </div>
             </div>
-            <div className="flex justify-between">
-              {sections.map((section) => (
-                <div key={section.id} className="flex flex-col pr-10">
-                  <div className="mb-3">
-                    <p className="text-4xl text-[#101828] font-semibold">{section.title}</p>
-                    <p
-                      href={section.links[0].href}
-                      className="text-sm font-bold"
-                      id={section.links[0].id}
-                    >
-                    </p>
-                  </div>
-                  {section.links.slice(0).map((link) => (
-                    <Link
-                      key={link.id}
-                      href={link.href}
-                      className="text-sm my-2 font-bold text-[#101828]"
-                      id={link.id}
-                    >
-                      {link.text}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </footer>

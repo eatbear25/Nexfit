@@ -29,22 +29,6 @@ export default function CartLoadingSkeleton() {
             className="w-full h-full object-contain"
           />
         </div>
-
-        {/* 脈衝圓點 */}
-        <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          <div
-            className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
-            style={{ animationDelay: "0s" }}
-          ></div>
-          <div
-            className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"
-            style={{ animationDelay: "0.3s" }}
-          ></div>
-          <div
-            className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"
-            style={{ animationDelay: "0.6s" }}
-          ></div>
-        </div>
       </div>
 
       <style jsx>{`
