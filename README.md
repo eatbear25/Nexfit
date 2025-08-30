@@ -31,8 +31,8 @@ Nexfit，一站式運動平台，提供課程預約與線上購物等功能。
 
 #### 結帳流程展示
 
-[![Demo 影片](./docs/video-img.png)](https://youtu.be/w1RrE70rAs0)
-[🔗 點擊前往觀看結帳流程](https://youtu.be/w1RrE70rAs0)
+[![Demo 影片](./docs/video-img.png)](https://youtu.be/k25QM0NxHpY)
+[🔗 點擊前往觀看結帳流程](https://youtu.be/k25QM0NxHpY)
 
 #### 加入購物車
 
